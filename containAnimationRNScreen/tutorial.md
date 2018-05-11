@@ -1,0 +1,1 @@
+Contain an Animation within the Screen Dimensions in React Native
