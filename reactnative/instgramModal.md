@@ -394,4 +394,8 @@ onPanResponderRelease: (e, gestureState) => {
 That's it, we created a modal, measured the locations of action items, create a `PanResponder` and reacted to when the user hovered over one of our measured locations.
 Go forth and customize this interaction to fit into your own applications.
 
-https://images.codedaily.io/lessons/reactnative/instagrammodal/Demo.gif
+Check out the live demo here [https://snack.expo.io/@codedaily/instagram-modal](https://snack.expo.io/@codedaily/instagram-modal)
+
+![](https://images.codedaily.io/lessons/reactnative/instagrammodal/Demo.gif)
+
+
