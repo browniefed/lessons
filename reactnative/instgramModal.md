@@ -75,7 +75,7 @@ The next step is to render our modal. We are rendering using the `StyleSheet.abs
 
 The modal container will then use `%` width and `%` height so that the dimensions will be properly set when being centered by our `modal` style. We use a `width` of `90%` to setup a slight bit of padding on both sides. Then a `height` of `60%`.
 
-Our `Image` owe need to set to cover since our dimensions could be anything here and need it to cover the full container. This is less than ideal, but to fix it we'd need to calculate what the actual dimensions/aspect ratio would be in JS land, and then position our footer/header specifically.
+Our `Image` resizeMode needs to be set to cover since our dimensions could be anything here and need it to cover the full container. This is less than ideal, but to fix it we'd need to calculate what the actual dimensions/aspect ratio would be in JS land, and then position our footer/header specifically.
 
 Finally our `header` and `footer` are pretty much exactly the same, we just need to round different corners. So the header has top left and top right corners rounded, where the footer has bottom left and bottom right rounded.
 
