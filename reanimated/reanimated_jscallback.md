@@ -4,7 +4,7 @@ The point of React Native is to have your logic inside of JS. Reanimated is pure
 
 When dealing with the callback it must be bound to `this` when passed in because things need to be setup at first render. This means you have 2 options. The first is to setup in constructor and do the old `bind` method. However if you want to still use class property syntax you would need to use `componentWillMount` which has been deprecated.
 
-![](https://images.codedaily.io/lessons/reanimated/ReanimatedDragJSCall.gif
+![](https://images.codedaily.io/lessons/reanimated/ReanimatedDragJSCall.gif)
 
 ## Setup
 
@@ -202,4 +202,4 @@ This provides the most effect way to have performant animations and still execut
 [Live Demo Here](https://snack.expo.io/@codedaily/reanimated-call-condition)
 
 
-![](https://images.codedaily.io/lessons/reanimated/ReanimatedDragJSCall.gif
+![](https://images.codedaily.io/lessons/reanimated/ReanimatedDragJSCall.gif)
