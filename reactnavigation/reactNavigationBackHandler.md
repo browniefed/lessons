@@ -4,6 +4,8 @@ The Android back button adds an additional navigation option that is crucial to 
 
 If not handled your users may potentially lose information they've entered into your app. Not only that you may want to control the back navigation based upon the state of your application.
 
+![](https://images.codedaily.io/lessons/reactnavigation/AndroidBackPrompt.gif)
+
 ## App Structure
 
 We'll start with a basic setup already. We'll start by using `createStackNavigator` to create a stack of screens that can be navigated to. In our case we just have 2, the Home screen which is the default and the profile screen.
@@ -244,3 +246,5 @@ onBack = () => {
 ## Ending
 
 Handling the back button is one thing, however you still need to manage the actual `back` button in the header or gestures that are enabled by default on iOS. Many developers plan for what they can see and render, however often forget about interactions with hardware buttons on Android.
+
+![](https://images.codedaily.io/lessons/reactnavigation/AndroidBackPrompt.gif)
