@@ -2,7 +2,7 @@
 
 [Immer](https://github.com/mweststrate/immer) is an incredible new library for JavaScript immutability. In previously libraries like [Immutable.js](https://github.com/facebook/immutable-js) it required whole new methods of operating on your data.
 
-This was great but required complicated adapaters and converting back and forth between JSON and Immutable in order to work with other libraries if needed.
+This was great but required complicated adapters and converting back and forth between JSON and Immutable in order to work with other libraries if needed.
 
 Immer simplifies this and you use data and JavaScript objects as your normally would. This means when you need performance and need to know when something changes you can use a triple equal strict equality check and prove that something has indeed changed or not changed.
 
