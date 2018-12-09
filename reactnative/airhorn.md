@@ -6,7 +6,7 @@ This will utilize a few tricks to make it look like a real 3D button is being pr
 
 ## The Sound
 
-First off we'll need to grab our airhorn sound, or whatever sound you prefer. I pulled a random airhorn off of youtube and converted it to an MP3, to get access to the sound feel free to visit the link below and download it. Then place it in our `assets` directory.
+First off we'll need to grab our airhorn sound, or whatever sound you prefer. I pulled a random airhorn off of Youtube and converted it to an MP3, to get access to the sound feel free to visit the link below and download it. Then place it in our `assets` directory.
 
 [Download](https://github.com/codedailyio/teachrn/blob/airhorn3d/assets/airhorn.mp3)
 
@@ -18,7 +18,7 @@ Expo ships with a Audio playing capabilities that makes our life infinitely easi
 import { Audio } from "expo";
 ```
 
-We'll create a function to call when we press our button. It will create a new sound, load our airhorn then play it asychronously.
+We'll create a function to call when we press our button. It will create a new sound, load our airhorn then play it asynchronously.
 
 The reason we do it this way is so you can press the airhorn button multiple times and it will play over the top of each other.
 
@@ -204,7 +204,7 @@ handleButtonUp = () => {
 };
 ```
 
-It doesn't matter if you press the button again before the `50ms` is complete it'll retrigger the pressing animation and animate to `1` from whatever point the animated value is at. Also because we've built everything from interpolations they will all respond correctly.
+It doesn't matter if you press the button again before the `50ms` is complete it'll re-trigger the pressing animation and animate to `1` from whatever point the animated value is at. Also because we've built everything from interpolations they will all respond correctly.
 
 ## Smash That Airhorn
 
