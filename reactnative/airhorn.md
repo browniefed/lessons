@@ -136,6 +136,11 @@ const heightStyle = {
 };
 ```
 
+The whole point of this interpolation is to start by move the whole button upwards with the negative offset. Then with our bottom spacing we have the background peak through. When we animate to `1` the margin will decrease from `-15` to `0` which will make the button appear to move downward. 
+
+We still have our padding that is showing the darker red background which we don't want. We will then animate that to `0` create a depressing button effect.
+
+
 We also want to animate our border radius so as the button is animated into the border box it takes the same border radius as the outer `height` wrap so that nothing is visible and that all the dark background is completely covered.
 
 ```js
