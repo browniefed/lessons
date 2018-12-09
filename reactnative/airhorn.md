@@ -211,5 +211,3 @@ It doesn't matter if you press the button again before the `50ms` is complete it
 That should do it! Check it out in action, and give the live version a try so you can have your very own airhorn button app!
 
 ![](https://images.codedaily.io/lessons/reactnative/airhorn/airhorn_animation.gif)
-
-Code can be found here [https://github.com/codedailyio/teachrn/tree/airhorn3d](https://github.com/codedailyio/teachrn/tree/airhorn3d)
