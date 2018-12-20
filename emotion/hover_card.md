@@ -1,6 +1,6 @@
 ## Intro
 
-CSS-in-JS is a powerful construct for styling with React based applications. In some small cases it can be unnecessary, however as applications grow CSS can become difficult to maintain. Even more so within applications that do themeing and or need run-time evaluation CSS, normal CSS can be difficult to use for these cases.
+CSS-in-JS is a powerful construct for styling with React based applications. In some small cases it can be unnecessary, however as applications grow CSS can become difficult to maintain. Even more so within applications that do theming and or need run-time evaluation CSS, normal CSS can be difficult to use for these cases.
 
 There are a lot of rules around CSS when it comes to specificity, and even the order at which a `.css` file was included on the page to determine whether or not a style is applied/overridden. These are generally things you don't really want to have to worry about when building out a large dynamic application. This is where CSS-in-JS libraries like Emotion come into play.
 
@@ -185,3 +185,7 @@ On our previous components we had applied `transitions` for these specific style
 
 
 ![](https://images.codedaily.io/lessons/emotionHover/CoolHover.gif)
+
+## Ending
+
+This only scratches the basic surface of Emotion. Emotion can additionally use props passed in to control dynamic styling. You can create the ultimate flexible styling using React components.
