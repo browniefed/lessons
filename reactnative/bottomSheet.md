@@ -213,4 +213,3 @@ Now apply our slide up animation to our popup bottom sheet animated view.
 This technique is a simple concept that can be extended to other things like modals, and dropdown/popup notifications.
 
 ![](https://images.codedaily.io/lessons/reactnative/bottomsheet/bottomsheet.gif)
-
