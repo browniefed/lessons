@@ -49,7 +49,7 @@ We are setting up a backdrop that will cover the content of the app. It's not ne
 ```js
 cover: {
   backgroundColor: "rgba(0,0,0,.5)",
-},  
+},
 ```
 
 ![](https://images.codedaily.io/lessons/reactnative/bottomsheet/backdrop.png)
@@ -58,7 +58,7 @@ cover: {
 
 Now comes in the technique for setting up our bottom action sheet. Our `sheet` style is positioned absolutely. We set it to `100%` height so it'll be the entire height of our screen, and then we set the `top` to the window height.
 
-This gets the screen height and moves our wrapping view all the way off the screen. 
+This gets the screen height and moves our wrapping view all the way off the screen.
 
 ```js
 <View style={[styles.sheet]}>
@@ -98,7 +98,6 @@ Finally we add in our close button. Your real content would go here. To give the
 
 ![](https://images.codedaily.io/lessons/reactnative/bottomsheet/overlay.png)
 
-
 ## Setup Animation
 
 Now we get to our animation. Everything will be driven from a single animated value so that our animation is 100% reversible. We don't need to manage separate animations, it's all driven off of a single `0` for close or `1` for open and all animated states are interpolated.
@@ -108,6 +107,7 @@ state = {
   animation: new Animated.Value(0),
 };
 ```
+
 For our open/close we'll use `Animated.timing` with a duration. We are animating opacity and translation so that means we can apply `useNativeDriver: true` and all of our animations will run on the native side rather than driven in the JS world. This sets us up for very performant animations.
 
 ```js
@@ -191,7 +191,7 @@ const slideUp = {
       translateY: this.state.animation.interpolate({
         inputRange: [0.01, 1],
         outputRange: [0, -1 * screenHeight],
-        extrapolate: 'clamp'
+        extrapolate: "clamp",
       }),
     },
   ],
@@ -208,8 +208,59 @@ Now apply our slide up animation to our popup bottom sheet animated view.
 </Animated.View>
 ```
 
+## Add Something Fun
+
+Just as an example we can render a horizontal `ScrollView` that renders random colors to swipe through. You can easily replace it with any other scrollable actions you desire.
+
+```js
+import React, { Component } from "react";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
+
+const randomHsl = () => `hsla(${Math.random() * 360}, 100%, 50%, 1)`;
+const cards = Array(20).fill(0);
+
+class Scroller extends Component {
+  render() {
+    return (
+      <ScrollView horizontal style={styles.scroll}>
+        {cards.map((v, index) => {
+          return <View key={index} style={[styles.card, { backgroundColor: randomHsl() }]} />;
+        })}
+      </ScrollView>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  scroll: {
+    height: 300,
+  },
+  card: {
+    height: "100%",
+    width: 200,
+  },
+});
+
+export default Scroller;
+```
+
+Import it then just render inside of our popup. That's it.
+
+```js
+import Scroller from "./scroller";
+
+<Animated.View style={[styles.popup, slideUp]}>
+  <TouchableOpacity onPress={this.handleClose}>
+    <Text>Close</Text>
+  </TouchableOpacity>
+  <Scroller />
+</Animated.View>
+```
+
+![](https://images.codedaily.io/lessons/reactnative/bottomsheet/scroller.png)
+
 ## Ending
 
-This technique is a simple concept that can be extended to other things like modals, and dropdown/popup notifications.
+This technique is a simple concept that can be extended to other things like modals, dropdown/popup notifications, or anything else you accessible from the bottom.
 
 ![](https://images.codedaily.io/lessons/reactnative/bottomsheet/bottomsheet.gif)
