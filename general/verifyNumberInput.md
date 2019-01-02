@@ -4,6 +4,10 @@ Many websites provide a mechanism to verify a user based upon a text message. Th
 
 This on the surface can look trivial but can be complex when you are dealing with user interactions like pasting, deleting, and focus management.
 
+This tutorial was inspired by logging into Stripe and seeing how they handled their text code verification.
+
+![](https://images.codedaily.io/lessons/general/verify_input/stripe_example.png)
+
 ## Setup 6 Rectangles
 
 6 is arbitrary this will work with any amount as long as we base our calculations off of the length of the array.
@@ -66,6 +70,8 @@ We also use display flex to allow us to easily center our text content inside of
   display: flex;
 }
 ```
+
+![](https://images.codedaily.io/lessons/general/verify_input/input_borders.png)
 
 ## Setup Our Input
 
@@ -214,6 +220,8 @@ If a user pasted in `8` characters we would grab `0` to `6` in our case and only
 
 Also if the current length is greater than or equal to maximum code length we return null. This will prevent typing in more than the allowed amount or characters.
 
+![](https://images.codedaily.io/lessons/general/verify_input/input_noshadow.gif)
+
 ## Fake Outline
 
 Accessibility is important to think about and so we will need to re-create the outline that would normally display when the user has focus. We could add in the outline but choose to do it this way for better design/aesthetic purposes.
@@ -313,3 +321,7 @@ To handle this we will check if the user has typed in all characters than just h
 ```
 
 ## Ending
+
+That's it, we now have an input that auto-progresses whenever you type it in and stops when the maximum character limit is reached.
+
+![](https://images.codedaily.io/lessons/general/verify_input/input_complete.gif)
