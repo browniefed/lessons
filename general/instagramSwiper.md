@@ -87,6 +87,8 @@ The `object-fit` is for our images, this will contain them so they maintain thei
 
 ## Get Scrolling
 
+![](https://images.codedaily.io/lessons/general/instagramSwipe/simplescroll.gif)
+
 On our `main` container we apply the `onWheel` event. This allows us to capture any wheel/scroll events when the mouse happens to be over our `div`. So even though there is nothing to scroll and no scroll bar we can still capture scrolling events.
 
 ```js
