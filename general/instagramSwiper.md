@@ -1,5 +1,12 @@
 ## Introduction
 
+Instagram has a really cool swiping image experience. As you scroll over a set of images it'll move left/right and then snap to whatever image you've partially settled on.
+
+It looks a little something like this. We're going to tackle making a version of this.
+
+![](https://images.codedaily.io/lessons/general/instagramSwipe/insta3.gif)
+
+
 ## Get Some Images
 
 [Unsplash](https://unsplash.com/) is the place to be when it comes to getting beautiful free images.
@@ -302,6 +309,8 @@ if (deltaInteger >= 0) {
 this.transitionTo(nextIndex);
 ```
 
+![](https://images.codedaily.io/lessons/general/instagramSwipe/partial.png)
+
 ## Moving Backwards
 
 Moving backwards is much like moving forward but our percentage of what image we are looking at will be `.9` since we'll be looking at the right side of the image.
@@ -396,6 +405,8 @@ const { movement, transitionDuration, imgs } = this.state;
 
 ## Previous/Next Buttons
 
+![](https://images.codedaily.io/lessons/general/instagramSwipe/final.png)
+
 The final bit of code is adding in our next/previous buttons as well as hiding them appropriately.
 
 We pull off and determine a few variables like the total number of images we have and the maximum movement we can translate the swiper.
@@ -471,3 +482,7 @@ Then we bust out our separate classes to position them `left/right` away from th
 ```
 
 ## Ending
+
+We're done! Now we have a swipeable, scrollable image carousel.
+
+![](https://images.codedaily.io/lessons/general/instagramSwipe/final.gif)
