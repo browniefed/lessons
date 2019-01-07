@@ -17,7 +17,7 @@ I went for images that were all roughly the same dimensions so when it came time
 
 ## Render Them Side By Side
 
-Lets dive into the basic outline of our application. We define width/height up front, however this could be driven off of a dynamic container size in the future. To simplify the concept we'll focus on static dimensions.
+Let's dive into the basic outline of our application. We define width/height up front, however this could be driven off of a dynamic container size in the future. To simplify the concept we'll focus on static dimensions.
 
 We need to build our DOM structure in such a way that the our outer container is like a window into our inner container.
 
@@ -419,7 +419,7 @@ const maxLength = imgs.length - 1;
 const maxMovement = maxLength * IMG_WIDTH;
 ```
 
-For the `back` movement if we are currently at `0` we are at the beginning of the container. This means we don't want the back button to appear so we hide it. Since this is all being updated live and instant it's a good value to determine visiblity of our buttons off of.
+For the `back` movement if we are currently at `0` we are at the beginning of the container. This means we don't want the back button to appear so we hide it. Since this is all being updated live and instant it's a good value to determine visibility of our buttons off of.
 
 When clicked the button will then move us to our `currentIndex - 1` over half a second.
 
@@ -438,7 +438,7 @@ When clicked the button will then move us to our `currentIndex - 1` over half a 
 }
 ```
 
-The same concept goes for our next button however we'll only render it if the container hasn't been scrolled to it's maximum amount. Then if clicked we move to the `currentIndex + 1` over half a second.
+The same concept goes for our next button however we'll only render it if the container hasn't been scrolled to its maximum amount. Then if clicked we move to the `currentIndex + 1` over half a second.
 
 ```js
 {
