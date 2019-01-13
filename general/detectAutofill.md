@@ -4,9 +4,7 @@ Chances are you've had Chrome autofill a form for you. The data fills in with a 
 
 This can lead to broken user interfaces like this. Lets see how we can avoid this with our own UIs.
 
-
 ![](https://images.codedaily.io/lessons/general/detectAutofill/broken.png)
-
 
 ## Input with Label
 
@@ -90,10 +88,9 @@ We also add in `pointer-events: none;` so when the user taps on the input it'll 
 
 ![](https://images.codedaily.io/lessons/general/detectAutofill/centered_label.png)
 
-
 ## Detect Autofill
 
-The only indicator Chrome gives us is by applying the css pseudo class  `:-webkit-autofill` to our `input` element. We need a way to indicate to our React component that the `:-webkit-autofill` was applied.
+The only indicator Chrome gives us is by applying the css pseudo class `:-webkit-autofill` to our `input` element. We need a way to indicate to our React component that the `:-webkit-autofill` was applied.
 
 To do this we take advantage of CSS animations. We create 2 totally empty animations with distinct names that we can look for later in our component.
 
@@ -134,7 +131,7 @@ To get access to animations starting we can use the `onAnimationStart` event. We
 
 We need a bit of state now to control whether or not we're auto filling. We add in a `hide` value on state, and look at our `e.animationName` to see if it's equal to our `onAutoFillStart` animation.
 
-We created an `onAutoFillCancel` however it's not necessary for this application because we have a singular animation on our `input` so if the started animation isn't `onAutoFillStart` then it means it's `onAutoFillCancel`. 
+We created an `onAutoFillCancel` however it's not necessary for this application because we have a singular animation on our `input` so if the started animation isn't `onAutoFillStart` then it means it's `onAutoFillCancel`.
 
 However if you have multiple animations on a particular input you may need to look for `onAutoFillCancel` to determine if autofill was cancelled.
 
@@ -156,7 +153,7 @@ To move our label out of the way we can apply some CSS and with our previous tra
 
 The `-8px` is `50%` of our text height since we've added a `translateY(-50%)` we need to now overcome.
 
-We'll start with something looking like this 
+We'll start with something looking like this
 
 ![](https://images.codedaily.io/lessons/general/detectAutofill/filled_label_cover.png)
 
@@ -231,10 +228,11 @@ render() {
 
 ![](https://images.codedaily.io/lessons/general/detectAutofill/hidden_novalue.png)
 
-
 ## Ending
 
 Now you can detect when Chrome is autofilling and execute the code you need to provide a nice user interface.
 
-As an Emotion user I decided to wrap this all up into a library 
+![](https://images.codedaily.io/lessons/general/detectAutofill/moving_label.gif)
+
+As an Emotion user I decided to wrap this all up into a library
 [https://github.com/browniefed/emotion-autofill-input](https://github.com/browniefed/emotion-autofill-input)
