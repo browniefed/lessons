@@ -180,6 +180,8 @@ componentDidMount = () => {
 };
 ```
 
+![](https://images.codedaily.io/lessons/general/animatedIndicator/movingindicators.gif)
+
 ## Convert to Hooks
 
 The Component version we just built contain 3 concepts. Life cycles, mutable references and state. React has a concept called hooks that allows us to add these concepts to functional components.
@@ -308,4 +310,6 @@ const App = () => {
 
 You now have the ability to render some really cool animated pagination indicators! Check them out live on [Code Sandbox](https://codesandbox.io/s/github/codedailyio/teach/tree/animatedPageIndicator/?module=%2Fsrc%2FApp.js)
 
-![](https://images.codedaily.io/lessons/general/animatedIndicator/movingindicators.gif)
+
+![](https://images.codedaily.io/lessons/general/animatedIndicator/multiple.gif)
+
