@@ -236,4 +236,5 @@ render() {
 
 Now you can detect when Chrome is autofilling and execute the code you need to provide a nice user interface.
 
-As an Emotion user I decided to wra this all up into a library [https://github.com/browniefed/emotion-autofill-input](https://github.com/browniefed/emotion-autofill-input)
+As an Emotion user I decided to wrap this all up into a library 
+[https://github.com/browniefed/emotion-autofill-input](https://github.com/browniefed/emotion-autofill-input)
