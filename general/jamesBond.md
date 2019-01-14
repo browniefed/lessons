@@ -4,7 +4,6 @@ The James Bond opening intro show cases a gun barrel moving along and dropping c
 
 This is an interesting concept to build on the web to show case how to use transitions and CSS animations together to create the concept.
 
-
 ## Concept
 
 One possible concept is staggering the movement of circles, showing one and moving a second one backwards and another forwards. An easier concept to implement is to create a single circle that moves across the screen. At specific increments we can show a circle and then hide it.
