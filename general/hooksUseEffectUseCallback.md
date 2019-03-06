@@ -147,7 +147,7 @@ We've now drastically reduced our required code needed to listen to a window eve
 
 In our previous code you may notice that we are passing in a function to `useGlobalMouseMove`. This is going to cause a new function to be defined every single render and our window listener will once again be constantly registered and cleaned up.
 
-One way to avoid this is `useCallback`. Like `useEffect` it will also take a list of dependencies that are referenced in the callback and return the same function if the dependencies dont' change. Dependencies being data and functions that are used with-in the arrow function that is passed to our `useCallback`.
+One way to avoid this is `useCallback`. Like `useEffect` it will also take a list of dependencies that are referenced in the callback and return the same function if the dependencies don't change. Dependencies being data and functions that are used with-in the arrow function that is passed to our `useCallback`.
 
 ```js
 export default function CoolComponent() {
