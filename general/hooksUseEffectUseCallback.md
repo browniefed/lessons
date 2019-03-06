@@ -121,11 +121,11 @@ export const useWindowEvent = (event, callback) => {
 We are receiving another prop so we will need to add it in to our dependencies for `useEffect`. Now we can create any number of window events with ease.
 
 ```js
-export const useGlobalMouseUp = (callback: Callback) => {
+export const useGlobalMouseUp = (callback) => {
   return useWindowEvent("mouseup", callback);
 };
 
-export const useGlobalMouseMove = (callback: Callback) => {
+export const useGlobalMouseMove = (callback) => {
   return useWindowEvent("mousemove", callback);
 };
 ```
