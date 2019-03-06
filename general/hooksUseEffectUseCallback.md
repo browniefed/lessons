@@ -217,3 +217,12 @@ One reason I do not like this is it places the dependencies onto a hook that doe
 The `useWindowEvent` only depends on the `event` being passed in and the `callback`. Those are the only 2 things it cares about changing and needing to re-run.
 
 This is the reason React provides the `useCallback` hook. Create your reusable hooks based upon the dependencies they care about, and use additional provided hooks like `useCallback` to do the dependency comparisons where the dependencies are actually being used.
+
+
+## Complete
+
+There you have it, a hook you can take and add to your own code. Use the `useEffect` and `useCallback` knowledge to create new hooks that are performant and correct. 
+
+If you want to see some code in action check out this Code Sandbox
+
+[https://codesandbox.io/s/jplmpv2v85](https://codesandbox.io/s/jplmpv2v85?fontsize=14)
