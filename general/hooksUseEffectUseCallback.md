@@ -74,7 +74,7 @@ So to clean it up we need to return a cleanup function to unregister our functio
 useEffect(() => {
   window.addEventListener("mouseup", props.onEvent);
 
-  return () => window.addEventListener("mouseup", props.onEvent);
+  return () => window.removeEventListener("mouseup", props.onEvent);
 });
 ```
 
@@ -85,7 +85,7 @@ This is super fast and likely won't cause any performance issues lets add in our
 useEffect(() => {
   window.addEventListener("mouseup", props.onEvent);
 
-  return () => window.addEventListener("mouseup", props.onEvent);
+  return () => window.removeEventListener("mouseup", props.onEvent);
 }, [props.onEvent]);
 ```
 
