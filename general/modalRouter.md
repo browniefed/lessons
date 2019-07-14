@@ -2,7 +2,7 @@
 
 Modals present a tricky situation for many applications. Are they a route? Are they just presenting info? Do users need to get back to whatever they're presenting?
 
-Regardless of the situation in React most modals are presented by toggling a piece of state. However on a refresh that state will no longer exist so the modal will close. The only mechanism for storing state that is shareable across users is via the URL. Lets explore how to create a modal, and how we can go about turning into a route while not un-rendering the current route.
+Regardless of the situation in React most modals are presented by toggling a piece of state. However on a refresh that state will no longer exist so the modal will close. The only mechanism for storing state that is shareable across users is via the URL. Let's explore how to create a modal, and how we can go about turning into a route while not un-rendering the current route.
 
 # Setup Routes
 
@@ -111,17 +111,17 @@ export default class Modal extends Component {
 
 # Render Dynamic Subroute
 
-Now that we have our modal, pages, and routes all setup lets look at how to put it all together. Upon clicking an `Edit Profile` link you might want a modal to pop up that covers the existing page.
+Now that we have our modal, pages, and routes all setup let's look at how to put it all together. Upon clicking an `Edit Profile` link you might want a modal to pop up that covers the existing page.
 
-Being a modal route it doesn't make sense for a top level route, and because it's dealing with the profile it makes sense to colocate this route. This is the power of React Router and it's ability to render routes anywhere.
+Being a modal route it doesn't make sense for a top level route, and because it's dealing with the profile it makes sense to colocate this route. This is the power of React Router and its ability to render routes anywhere.
 
 The concept is that a `Route` takes a `path`. If that Route is rendered and the path is matched then the supplied React will render. 
 
 Generally routes are though of as full pages when in fact it could control a full page, or a small component. An example of this would be tabs. You may have multiple tabs on a page but want people to navigate to them. You can add in tab specific routes to that page. So one route to render the wrapping page, and any number of sub-tabs rendering with in that page. The URL will match to render the main outer page, and then the tab paths can be setup to render only when those URLs are visited.
 
-Lets look at how this applies to our modal route. First lets fix our `Edit Profile` link.
+Lets look at how this applies to our modal route. First let's fix our `Edit Profile` link.
 
-Rather than specifying `/profile` we can dynamically link to whatever page we're currently matched on. The `match.url` is supplied by React Router and is the `path` from the `Route` that is being rendered.
+Rather than specifying `/profile` we can dynamically link to whatever page we are currently matched on. The `match.url` is supplied by React Router and is the `path` from the `Route` that is being rendered.
 
 So because we had just `/profile` our `match.url` will always be `/profile`.
 
