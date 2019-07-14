@@ -213,7 +213,7 @@ export default class LoginPage extends Component {
 
 # Fix Links
 
-We need to fix our links, but because we are rendering it on any page we should craft dynamic links. The `Link` component from React Router can receive a string but also an object for it's `to` prop.
+We need to fix our links, but because we are rendering it on any page we should craft dynamic links. The `Link` component from React Router can receive a string but also an object for its `to` prop.
 
 We supply an object and provide a `pathname` which will be our `match.url` so the path that we are matching on, and then additionally a `search` key and pass in `?login=true` so that it's not undefined and will register accordingly with our `URLSearchParams`. 
 
@@ -223,4 +223,6 @@ We supply an object and provide a `pathname` which will be our `match.url` so th
 
 # Ending
 
-Now we have a dynamic modal route based upon query params.
+Now we have a dynamic modal route based upon query params. The main technique to take away here is that you can render Routes anywhere. They don't have to be just in a top level `Switch`. They will render when the `path` is matched, and that's what we take advantage of here. We can create always rendering routes that will allow us to create these types of interfaces.
+
+You can check out the code here [https://github.com/codedailyio/ReactRouterModal](https://github.com/codedailyio/ReactRouterModal) and or check out the [live demo](https://codesandbox.io/s/github/codedailyio/ReactRouterModal).
