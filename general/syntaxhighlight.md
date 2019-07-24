@@ -8,7 +8,7 @@ There is one main reason for this and it's security. With innerHTML or dangerous
 
 One specific case that is generally an area of conflict is syntax highlighting. Syntax highlighting is hard because you need to parse and understand different languages. That parsing needs to be turned into different DOM elements with css classes applied so that your CSS theme you've added will be applied.
 
-There are some optiosn but 2 main options out there are [https://highlightjs.org/](https://highlightjs.org/) and [https://prismjs.com/](https://prismjs.com/). I found that `highlightjs` has more support and examples but in general has very poor support for JSX. So I decided to go with PrismJS but ran into issues supporting that within a React environment.
+There are some options but 2 main options out there are [https://highlightjs.org/](https://highlightjs.org/) and [https://prismjs.com/](https://prismjs.com/). I found that `highlightjs` has more support and examples but in general has very poor support for JSX. So I decided to go with PrismJS but ran into issues supporting that within a React environment.
 
 ## Unified, Remark and Rehype
 
@@ -28,7 +28,7 @@ So we'll create our own refractor prism highlighter!
 
 This module was 100% pulled from [https://github.com/mapbox/rehype-prism](https://github.com/mapbox/rehype-prism) and modified to be able to support just the languages that I needed to support. However I'll still step through and talk about each bit that goes into creating it.
 
-First step lets follow the recommendation from `refractor` and just pull in `refractor/core` and the languages we want to support.
+First step let's follow the recommendation from `refractor` and just pull in `refractor/core` and the languages we want to support.
 
 ```js
 import refractor from "refractor/core";
