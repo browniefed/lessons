@@ -1,10 +1,10 @@
-# Introduction
+## Introduction
 
 There are times where creating a full page doesn't make sense for a particular route in your application. Generally this means creating a Modal. However in the event that a user wants to link to it we need it to exist as a route.
 
-An example we'll focus on is a login modal. We want to link to the modal, however it should be able to be linked and appear over any page dynamically. Depending on your route structure this can be tricky, so we'll use a query param. So lets explore how to setup a query param modal that can be rendered over any page.
+An example we'll focus on is a login modal. We want to link to the modal, however it should be able to be linked and appear over any page dynamically. Depending on your route structure this can be tricky, so we'll use a query param. So let's explore how to setup a query param modal that can be rendered over any page.
 
-# Setup Routes
+## Setup Routes
 
 First we need to setup our pages. Our routes are just 2 pages, the home page and the profile page. These could be any number of pages, but these will sit inside the `Switch`. Whenever the paths are matched they will render. 
 
@@ -29,7 +29,7 @@ const routes = (
 ReactDOM.render(routes, document.getElementById("root"));
 ```
 
-# Pages
+## Pages
 
 Now here are our 2 pages, they both have links to the `Login` link. We haven't wired these up just yet but we'll do that later.
 
@@ -64,7 +64,7 @@ export default class ProfilePage extends Component {
 }
 ```
 
-# Create a Modal
+## Create a Modal
 
 Rather than focusing on a specific Modal we'll create a reusable one. We'll be using `createPortal` from `react-dom`. We don't want to render to `document.body` so in our `index.html` we'll add another div to render to which we'll give an id of `modal_root`.
 
@@ -91,7 +91,7 @@ const modalStyle = {
   bottom: 0,
   right: 0,
   backgroundColor: "rgba(0,0,0,.2)",
-  color: "#FFF",
+  color: "##FFF",
   fontSize: "40px",
 };
 export default class Modal extends Component {
@@ -106,7 +106,7 @@ export default class Modal extends Component {
 }
 ```
 
-# Create Login Modal
+## Create Login Modal
 
 Now we will create our login modal route. If we're rendering this as a page and we want it to work anywhere that we render we can't hard code any specific paths, they must be dynamic.
 
@@ -142,7 +142,7 @@ export default class LoginPage extends Component {
 }
 ```
 
-# Render Routes Base on Query Params
+## Render Routes Base on Query Params
 
 To make this work we need to render our route outside of the `Switch`. The reason this will work is because the Route will render all the time. We've supplied it a path of `/` and did not put the `exact` prop on it. So anytime the route changes in our application this route will re-render.
 
@@ -171,7 +171,7 @@ const routes = (
 ReactDOM.render(routes, document.getElementById("root"));
 ```
 
-# Login Modal Route Based on Query
+## Login Modal Route Based on Query
 
 Now that we're rendering our login page, lets make the `LoginPage` modal actually respect the query param. We use the `URLSearchParams`, which will take the query params, also called the `search` portion of the URL, and provide us with a bunch of helpers.
 
@@ -211,7 +211,7 @@ export default class LoginPage extends Component {
 }
 ```
 
-# Fix Links
+## Fix Links
 
 We need to fix our links, but because we are rendering it on any page we should craft dynamic links. The `Link` component from React Router can receive a string but also an object for its `to` prop.
 
@@ -221,7 +221,7 @@ We supply an object and provide a `pathname` which will be our `match.url` so th
 <Link to={{ pathname: this.props.match.url, search: "?login=true" }}>Login</Link>
 ```
 
-# Ending
+## Ending
 
 Now we have a dynamic modal route based upon query params. The main technique to take away here is that you can render Routes anywhere. They don't have to be just in a top level `Switch`. They will render when the `path` is matched, and that's what we take advantage of here. We can create always rendering routes that will allow us to create these types of interfaces.
 
