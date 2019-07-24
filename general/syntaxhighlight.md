@@ -1,16 +1,16 @@
-# Intro
+## Intro
 
 Determining what markdown parser, renderer, syntax highlighter to choose can be a tricky thing. One caveat that I had was that I wanted to work with React and wanting to render to React elements rather than just rendering to a big string and setting innerHTML.
 
 There is one main reason for this and it's security. With innerHTML or dangerouslySetInnerHTML this opens up for user injected script tags that can compromise your users. This is generally an issue if you're accepting content from users to display to other users.
 
-# Syntax highlighting
+## Syntax highlighting
 
 One specific case that is generally an area of conflict is syntax highlighting. Syntax highlighting is hard because you need to parse and understand different languages. That parsing needs to be turned into different DOM elements with css classes applied so that your CSS theme you've added will be applied.
 
 There are some optiosn but 2 main options out there are [https://highlightjs.org/](https://highlightjs.org/) and [https://prismjs.com/](https://prismjs.com/). I found that `highlightjs` has more support and examples but in general has very poor support for JSX. So I decided to go with PrismJS but ran into issues supporting that within a React environment.
 
-# Unified, Remark and Rehype
+## Unified, Remark and Rehype
 
 That's where Unified, Remark, and Rehype comes into play. Lets look at what each of these does.
 
@@ -18,13 +18,13 @@ That's where Unified, Remark, and Rehype comes into play. Lets look at what each
 
 This ends up being a series of functions that you pipe your content to.
 
-# Syntax Highlighting with Rehype
+## Syntax Highlighting with Rehype
 
 Now where does syntax highlighting fit into that flow? Well there is a plugin out there called [rehype-prism](https://github.com/mapbox/rehype-prism) however it's not recommended for browser usage because it includes syntax highlighting for every language via [refractor](https://github.com/wooorm/refractor). It would increase your bundle size 352kb (128kb GZipped). That's a lot!
 
 So we'll create our own refractor prism highlighter!
 
-# Refractor Prism
+## Refractor Prism
 
 This module was 100% pulled from [https://github.com/mapbox/rehype-prism](https://github.com/mapbox/rehype-prism) and modified to be able to support just the languages that I needed to support. However I'll still step through and talk about each bit that goes into creating it.
 
@@ -118,7 +118,7 @@ const rehypePrism = options => {
 export default rehypePrism;
 ```
 
-# Putting it all Together
+## Putting it all Together
 
 Okay we've got our custom plugin created, now lets put together a Markdown rendering component.
 
@@ -174,7 +174,7 @@ const Markdown = props => {
 export default Markdown;
 ```
 
-# CloudFlare Syntax Highlighting
+## CloudFlare Syntax Highlighting
 
 You can grab your themes from where ever but I grabbed it from CloudFlare CDN. Which you can find here [https://cdnjs.com/libraries/prism](https://cdnjs.com/libraries/prism). Additionally some themes are shipped with `prism` however it was easier to link to a hosted solution versus adding a CSS Loader for my existing setup.
 
@@ -189,7 +189,7 @@ You can grab your themes from where ever but I grabbed it from CloudFlare CDN. W
 
 ```
 
-# Ending
+## Ending
 
 Yes all of that just to highlight and parse markdown but there are many other powerful features that are supported with unified and operating in this environment. For example parsing out a table of contents from your markdown.
 
