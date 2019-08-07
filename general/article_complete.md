@@ -1,5 +1,11 @@
 ## Intro
 
+There are many reasons to show progress to our users. One of these is show cased on TechCrunch and it's the progress of the article that you've read so far. Technically it's just as far as you've scrolled but it helps the user gauge how long an article is depending on how fast the circle fills up.
+
+It also gives the user an action to `close` the article and when the article is complete there is a check mark and animation to give the user some feedback that they've completed. Also this minor celebration could be a reinforcement that could cause the user to read more articles, and read them completely.
+
+![](https://images.codedaily.io/lessons/article_complete/complete.gif)
+
 ## Page Setup
 
 We'll start with an `article` setup. We're not concerned with the content or anything we're mostly just concerned with the length of the article.
@@ -114,6 +120,8 @@ Our button will be `100x100` and so our border-radius we set to half of that to 
 }
 ```
 
+![](https://images.codedaily.io/lessons/article_complete/base.png)
+
 ## Circular Progress
 
 Now comes the part with the math. We create an SVG that is the same size as our button `100x100` but more importantly our `viewBox` is `50x50` so our available space to render that will be seen is `50x50`. Things will scale correctly, but just know that the rendering size isn't a factor here at the moment.
@@ -210,6 +218,8 @@ Now we can fill in our `strokeDasharray` on our style with the entire circumfere
   />
 </svg>
 ```
+
+![](https://images.codedaily.io/lessons/article_complete/no_offset.png)
 
 ## Track Scroll Progress
 
@@ -315,6 +325,8 @@ const notMoved = position === 1;
 
 So when complete we'll switch our button background color, we'll also change from teh `X` close to our checkmark completed. If we rendered when the user just started a little bit of the dash will show so we just won't render our circle indicator.
 
+![](https://images.codedaily.io/lessons/article_complete/no_progress.png)
+
 ```js
 <button
   className="button"
@@ -350,3 +362,5 @@ So when complete we'll switch our button background color, we'll also change fro
 ## End
 
 I didn't implement any action with the button, but that will be an exercise for you. Do something cool with your new found circular progress button. These concepts could apply to any other SVG, or progress. You just need to know the length of an SVG path. Additionally if you wanted to have the circle sit on the outside of the circle you could add instead of subtract our half stroke width.
+
+![](https://images.codedaily.io/lessons/article_complete/complete.gif)
