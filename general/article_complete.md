@@ -1,6 +1,6 @@
 ## Intro
 
-There are many reasons to show progress to our users. One of these is show cased on TechCrunch and it's the progress of the article that you've read so far. Technically it's just as far as you've scrolled but it helps the user gauge how long an article is depending on how fast the circle fills up.
+There are many reasons to show progress to our users. One of these is show cased on TechCrunch and its progress button in the corner showing how much of the article that you've read so far. Technically it's just as far as you've scrolled but it helps the user gauge how long an article is depending on how fast the circle fills up.
 
 It also gives the user an action to `close` the article and when the article is complete there is a check mark and animation to give the user some feedback that they've completed. Also this minor celebration could be a reinforcement that could cause the user to read more articles, and read them completely.
 
@@ -225,7 +225,7 @@ Now we can fill in our `strokeDasharray` on our style with the entire circumfere
 
 Before we can start showing the progress with our `stroke-dashoffset` we need get the percent of the article the user has scroll through.
 
-We could put in `3000` since we know the height of the article we've created, but we'll calculate it dynamically. We'll need to get a `ref` to the DOM element so we can measure it's height.
+We could put in `3000` since we know the height of the article we've created, but we'll calculate it dynamically. We'll need to get a `ref` to the DOM element so we can measure its height.
 
 ```js
 const articleRef = useRef();
@@ -323,7 +323,7 @@ const complete = position === 0;
 const notMoved = position === 1;
 ```
 
-So when complete we'll switch our button background color, we'll also change from teh `X` close to our checkmark completed. If we rendered when the user just started a little bit of the dash will show so we just won't render our circle indicator.
+So when complete we'll switch our button background color, we'll also change from the `X` close to our checkmark completed. If we rendered when the user just started a little bit of the dash will show so we just won't render our circle indicator.
 
 ![](https://images.codedaily.io/lessons/article_complete/no_progress.png)
 
