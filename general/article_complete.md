@@ -4,7 +4,7 @@ There are many reasons to show progress to our users. One of these is show cased
 
 It also gives the user an action to `close` the article and when the article is complete there is a check mark and animation to give the user some feedback that they've completed. Also this minor celebration could be a reinforcement that could cause the user to read more articles, and read them completely.
 
-![](https://images.codedaily.io/lessons/article_complete/complete.gif)
+![](https://images.codedaily.io/lessons/article_complete/example.gif)
 
 ## Page Setup
 
