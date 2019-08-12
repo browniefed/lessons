@@ -135,7 +135,7 @@ const scrollTo = ele => {
 };
 ```
 
-We'll get to it next but each section will have it's own `ref` so we can measure the height. But we can also use those refs to the DOM elements to get their offsetTop and scroll to them.
+We'll get to it next but each section will have its own `ref` so we can measure the height. But we can also use those refs to the DOM elements to get their offsetTop and scroll to them.
 
 ```js
 <div className="header">
@@ -177,7 +177,7 @@ We need to know where the user has currently scrolled to and also be notified wh
 
 We need to always clean up our effects, and with event listeners when we call `removeEventListener` we need to supply the same function reference to it.
 
-When dealing with hooks, and hooks that will depend on cleanup or hook dependencies it's best practice to create the function inside the `useEffect` hook.
+When dealing with hooks, and hooks that will depend on cleanup or hook dependencies it is best practice to create the function inside the `useEffect` hook.
 
 ```js
 useEffect(() => {
@@ -240,7 +240,7 @@ Now that we are monitoring the scroll position, and know the tops and bottoms of
 
 We'll need 2 new pieces. The first will be a state variable so we can update and re-render when the user changes sections.
 
-We'll also need the reference to the header so we can measure it's height and adjust our offset since the header will be sitting on top of our content and we want the bottom of the header when it hits a section to cause that section to highlight.
+We'll also need the reference to the header so we can measure its height and adjust our offset since the header will be sitting on top of our content and we want the bottom of the header when it hits a section to cause that section to highlight.
 
 ```js
 const [visibleSection, setVisibleSection] = useState();
@@ -262,7 +262,7 @@ const handleScroll = () => {
 };
 ```
 
-Then we can loop through each of our sections, and get the `offestTop` and `offsetBottom` with out `getDimensions` function. Now we can check if the `scrollPosition` is greater than the top of the element. Aka the user has at least scrolled past it a little. Then we also check if the `scrollPosition` is less than the bottom of the element.
+Then we can loop through each of our sections, and get the `offsetTop` and `offsetBottom` with out `getDimensions` function. Now we can check if the `scrollPosition` is greater than the top of the element. Aka the user has at least scrolled past it a little. Then we also check if the `scrollPosition` is less than the bottom of the element.
 
 This logic just is checking if we are between the top and bottom. Then we check our `visibleSection` if it is equivalent to the section we found. We want to do this to avoid setting state on every scroll event because we've detected that the user is in the same section.
 
