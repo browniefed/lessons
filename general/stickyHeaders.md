@@ -118,6 +118,8 @@ The key bit is that we have placed it inside of another `div`. That div will wra
 </div>
 ```
 
+![](https://images.codedaily.io/lessons/stickyHeaders/base.png)
+
 ## Click To Scroll
 
 The browser also implements the ability to scroll to different elements, you can call `element.scrollIntoView()` or also call `scrollTo` on an element to scroll to a specific offset.
@@ -166,6 +168,8 @@ We'll get to it next but each section will have it's own `ref` so we can measure
   </button>
 </div>
 ```
+
+![](https://images.codedaily.io/lessons/stickyHeaders/click_scroll_no_highlight.gif)
 
 ## Monitor Scroll
 
@@ -340,6 +344,10 @@ Finally because we have our `visibleSection` state updating when we scroll we ca
 </div>
 ```
 
+
+![](https://images.codedaily.io/lessons/stickyHeaders/highlighted.png)
+
+
 ## Remove First Highlight
 
 One other bit we need to take care of is if the user scrolls into our content, and then scrolls back to the top of the page. If we add an else if and detect when we haven't found a `selected` section. That means we aren't in any section at all. Then we check if we have a section selected, and can remove our selection by setting `visibleSection` to undefined.
@@ -373,3 +381,5 @@ useEffect(() => {
 ## End
 
 There you have it. If you just wanted a sticky header and didn't need to know what the section you are currently looking at you could have simply added just the `position: sticky`. The ability to click buttons to scroll to sections, and highlight the section the user is in provides a nicer experience.
+
+![](https://images.codedaily.io/lessons/stickyHeaders/clickscroll.gif)
