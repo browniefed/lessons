@@ -371,3 +371,5 @@ useEffect(() => {
 ```
 
 ## End
+
+There you have it. If you just wanted a sticky header and didn't need to know what the section you are currently looking at you could have simply added just the `position: sticky`. The ability to click buttons to scroll to sections, and highlight the section the user is in provides a nicer experience.
